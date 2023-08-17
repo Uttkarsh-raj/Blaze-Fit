@@ -7,4 +7,12 @@ class AppColors {
   static const darkGreen = Color.fromARGB(255, 31, 36, 23);
   static const grey = Color.fromARGB(255, 68, 76, 80);
   static const darkGrey = Color.fromARGB(255, 34, 43, 47);
+  static List<Color> gradientBack = [
+    Color.fromARGB(255, 231, 231, 231).withOpacity(0.02),
+    Color(0xFFFFFFFF).withOpacity(0.02),
+  ];
+  static List<Color> gradient = [
+    Color.fromARGB(255, 231, 231, 231).withOpacity(0.08),
+    Color(0xFFFFFFFF).withOpacity(0.08),
+  ];
 }

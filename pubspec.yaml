@@ -42,6 +42,9 @@ dependencies:
   health: ^8.0.0
   google_sign_in: ^6.1.4
   glassmorphism: ^3.0.0
+  lottie: ^2.3.2
+  syncfusion_flutter_charts: ^22.2.9
+  pie_chart: ^5.3.2
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +72,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/animations/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
