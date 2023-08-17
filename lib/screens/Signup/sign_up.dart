@@ -1,7 +1,6 @@
 import 'package:blaze_fit/api/auth/firebase_auth.dart';
 import 'package:blaze_fit/constants/constants.dart';
 import 'package:blaze_fit/screens/AuthPage/main_auth.dart';
-import 'package:blaze_fit/screens/HomeScreen/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 

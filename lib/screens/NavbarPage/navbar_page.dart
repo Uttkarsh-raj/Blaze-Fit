@@ -31,7 +31,7 @@ class _MainPageState extends State<MainPage> {
       // floatingActionButtonLocation:
       //     FloatingActionButtonLocation.miniCenterDocked,
       floatingActionButton: FloatingActionButton(
-        // backgroundColor: AppColorsConstants.primaryBackgroundColor,
+        backgroundColor: AppColors.lime,
         onPressed: () => Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) => const ChatPage(),
@@ -46,7 +46,7 @@ class _MainPageState extends State<MainPage> {
       extendBody: true,
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,
-        // selectedItemColor: AppColorsConstants.secondaryPurpleColor,
+        selectedItemColor: AppColors.lime,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

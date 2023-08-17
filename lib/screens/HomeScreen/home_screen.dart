@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
     heartBeat = await repository.getAll();
     setState(() {
       stepCount = int.parse((heartBeat[2].value).toString().split('.')[0]);
-      heartRate = heartBeat[1].value.toString();
+      heartRate = heartBeat[1].value.toString().split('.')[0];
       caloriesBurned = heartBeat[3].value.toString().split('.')[0];
       sleep = int.parse(heartBeat[0].value.toString().split('.')[0]);
     });
@@ -166,7 +166,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         Row(
                                           children: [
                                             Text(
-                                              '${sleep / 60}',
+                                              (sleep / 60).toStringAsFixed(2),
                                               style: const TextStyle(
                                                 fontSize: 20,
                                                 color: AppColors.white,

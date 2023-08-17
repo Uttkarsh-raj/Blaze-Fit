@@ -73,7 +73,7 @@ class _ChatPageState extends State<ChatPage> {
                 width: size.width,
                 child: AppColors.background),
             GlassContainer(
-              colors: AppColors.gradient,
+              colors: AppColors.gradientBack,
               blur: 65,
               height: size.height,
               width: size.width,
