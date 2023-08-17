@@ -1,10 +1,13 @@
+import 'package:blaze_fit/constants/constants.dart';
+import 'package:blaze_fit/screens/ChatPage/chat_page.dart';
 import 'package:blaze_fit/screens/HomeScreen/home_screen.dart';
+import 'package:blaze_fit/screens/MyProfile/profile.dart';
 import 'package:flutter/material.dart';
 
 final screen = [
   const HomeScreen(),
   const HomeScreen(),
-  const HomeScreen(),
+  const MyProfilePage(),
 ];
 
 class MainPage extends StatefulWidget {
@@ -25,21 +28,21 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButtonLocation:
-          FloatingActionButtonLocation.miniCenterDocked,
-      // floatingActionButton: FloatingActionButton(
-      //   backgroundColor: AppColorsConstants.primaryBackgroundColor,
-      //   onPressed: () => Navigator.of(context).push(
-      //     MaterialPageRoute(
-      //       builder: (context) => const NewPostPage(),
-      //     ),
-      //   ),
-      //   child: const Icon(
-      //     IconlyBold.plus,
-      //     size: 40,
-      //     color: AppColorsConstants.tertiaryBlackColor,
-      //   ),
-      // ),
+      // floatingActionButtonLocation:
+      //     FloatingActionButtonLocation.miniCenterDocked,
+      floatingActionButton: FloatingActionButton(
+        // backgroundColor: AppColorsConstants.primaryBackgroundColor,
+        onPressed: () => Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const ChatPage(),
+          ),
+        ),
+        child: const Icon(
+          Icons.chat,
+          size: 30,
+          color: AppColors.darkGrey,
+        ),
+      ),
       extendBody: true,
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,

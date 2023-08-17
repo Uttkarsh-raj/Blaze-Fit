@@ -72,10 +72,9 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Stack(
           children: [
             Container(
-              height: size.height,
-              width: size.width,
-              child: Image.asset('assets/images/back.jpg'),
-            ),
+                height: size.height,
+                width: size.width,
+                child: AppColors.background),
             GlassContainer(
               colors: [
                 Color.fromARGB(255, 231, 231, 231).withOpacity(0.02),
