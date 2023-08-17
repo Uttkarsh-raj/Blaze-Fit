@@ -1,7 +1,13 @@
-import 'package:blaze_fit/screens/sign_up.dart';
+import 'package:blaze_fit/screens/AuthPage/main_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -16,7 +22,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark(),
       theme: ThemeData.dark(),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      home: const SignUp(),
+      home: const MainAuthPage(),
     );
   }
 }

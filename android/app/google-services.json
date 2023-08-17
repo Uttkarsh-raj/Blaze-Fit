@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "77098324362",
+    "project_id": "blaze-fit-e156f",
+    "storage_bucket": "blaze-fit-e156f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:77098324362:android:1f9fa6e097ce8952f73873",
+        "android_client_info": {
+          "package_name": "com.exampleproj.blaze_fit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "77098324362-8l7sg9mtis7l0kdfac62lrstlk31p2v6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.exampleproj.blaze_fit",
+            "certificate_hash": "0ac230f74bfaac6cc5760748277601259c8ae2b8"
+          }
+        },
+        {
+          "client_id": "77098324362-0b7gmq4ojvfk06vhiuahlnik2djq4v41.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWOVv6b336mFiGfiS250jgfovFgs8-qJk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "77098324362-0b7gmq4ojvfk06vhiuahlnik2djq4v41.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
