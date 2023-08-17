@@ -1,4 +1,5 @@
 import 'package:blaze_fit/screens/HomeScreen/home_screen.dart';
+import 'package:blaze_fit/screens/NavbarPage/navbar_page.dart';
 import 'package:blaze_fit/screens/Signup/sign_up.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class MainAuthPage extends StatelessWidget {
             );
           }
           if (snapshot.hasData) {
-            return const HomeScreen();
+            return const MainPage();
           } else {
             return const SignUp();
           }
