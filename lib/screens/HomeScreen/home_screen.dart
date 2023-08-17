@@ -46,9 +46,9 @@ class _HomeScreenState extends State<HomeScreen> {
     heartBeat = await repository.getAll();
     setState(() {
       stepCount = int.parse((heartBeat[2].value).toString().split('.')[0]);
-      heartRate = heartBeat[1].value.toString().split('.')[0];
-      caloriesBurned = heartBeat[3].value.toString().split('.')[0];
-      sleep = int.parse(heartBeat[0].value.toString().split('.')[0]);
+      heartRate = heartBeat[0].value.toString().split('.')[0];
+      caloriesBurned = heartBeat[1].value.toString().split('.')[0];
+      sleep = int.parse(heartBeat[3].value.toString().split('.')[0]);
     });
     print(heartRate);
     print(stepCount);
@@ -257,6 +257,51 @@ class _HomeScreenState extends State<HomeScreen> {
                                     .withOpacity(0.08),
                                 Color(0xFFFFFFFF).withOpacity(0.08),
                               ],
+                              child: Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      'Steps / Day :',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: AppColors.white,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    // const SizedBox(height: 5),
+                                    Center(
+                                      child: Image.asset(
+                                        'assets/images/line-chart1.png',
+                                        scale: 3,
+                                        color: AppColors.lime,
+                                      ),
+                                    ),
+                                    // Row(
+                                    //   children: [
+                                    //     Text(
+                                    //       (sleep / 60).toStringAsFixed(2),
+                                    //       style: const TextStyle(
+                                    //         fontSize: 20,
+                                    //         color: AppColors.white,
+                                    //         fontWeight: FontWeight.w600,
+                                    //       ),
+                                    //     ),
+                                    //     const Text(
+                                    //       ' hrs',
+                                    //       style: TextStyle(
+                                    //         fontSize: 15,
+                                    //         color: AppColors.white,
+                                    //         fontWeight: FontWeight.w400,
+                                    //       ),
+                                    //     ),
+                                    //   ],
+                                    // ),
+                                  ],
+                                ),
+                              ),
                             ),
                             const SizedBox(height: 20),
                             Row(

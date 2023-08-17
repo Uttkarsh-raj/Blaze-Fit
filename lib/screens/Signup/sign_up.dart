@@ -1,6 +1,7 @@
 import 'package:blaze_fit/api/auth/firebase_auth.dart';
 import 'package:blaze_fit/constants/constants.dart';
 import 'package:blaze_fit/screens/AuthPage/main_auth.dart';
+import 'package:blaze_fit/utils/utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -78,6 +79,7 @@ class _SignUpState extends State<SignUp> {
                       const SizedBox(height: 20),
                       GestureDetector(
                         onTap: () async {
+                          showCustomAlertDialog(context);
                           UserCredential userCredential =
                               await AuthServices().signInWithGoogle();
                           User user = userCredential.user!;
@@ -87,12 +89,13 @@ class _SignUpState extends State<SignUp> {
                                 builder: (context) => MainAuthPage(),
                               ),
                             );
+                            //TODO: Register user in firebase and take to form page
                           }
-                          // Navigator.of(context).push(
-                          //   MaterialPageRoute(
-                          //     builder: (context) => const HomeScreen(),
-                          //   ),
-                          // );
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const MainAuthPage(),
+                            ),
+                          );
                         },
                         child: Container(
                           width: size.width * 0.8,
@@ -106,7 +109,7 @@ class _SignUpState extends State<SignUp> {
                             children: [
                               Image.asset(
                                 'assets/icons/google.png',
-                                scale: 13,
+                                scale: 14,
                               ),
                               const SizedBox(width: 10),
                               const Center(
@@ -115,7 +118,7 @@ class _SignUpState extends State<SignUp> {
                                   maxLines: 2,
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 20,
                                     color: AppColors.darkGreen,
                                     fontWeight: FontWeight.w700,
                                   ),
