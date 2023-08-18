@@ -6,34 +6,34 @@ Welcome to BlazeFit - Your Ultimate Fitness and Wellness Companion!
 * It leverages the power of AI through the integration of OpenAI API for a personalized chatbot experience and MindsDB model for accurate regression-based sleep disorder tracking.
 
 ## Features
-1. Fitness Tracking
+### 1. Fitness Tracking
 Log your workouts, track your steps, and monitor your progress.
 Choose from a variety of exercises and activities to customize your fitness routine.
 Set fitness goals and receive real-time feedback to stay motivated.
-2. Sleep Disorder Tracking
+### 2. Sleep Disorder Tracking
 BlazeFit integrates the MindsDB regression model to analyze your sleep patterns and predict potential sleep disorders.
 Input your sleep data, and the app will provide insights into your sleep quality and highlight any anomalies.
-3. Personalized Chatbot
+### 3. Personalized Chatbot
 Our AI-powered chatbot, built using the OpenAI API, offers guidance and answers to your fitness and wellness queries.
 Get recommendations for workouts, nutrition, sleep hygiene, and more based on your individual profile.
-4. User Authentication and Profiles
+### 4. User Authentication and Profiles
 Create a personalized user account to securely store your fitness and wellness data.
 Easily access your workout history, sleep analysis, and chatbot interactions.
-5. User-Friendly Interface
+### 5. User-Friendly Interface
 BlazeFit boasts an intuitive and visually appealing interface for seamless navigation.
 Enjoy a smooth user experience while accessing various features of the app.
 
 ## Installation and Setup
 * Front-end (Flutter)
 Clone the frontend repository.
-Navigate to the blazefit-app directory: cd blazefit-app
-Install dependencies: flutter pub get
-Run the app: flutter run
+Navigate to the blazefit-app directory: ```cd blazefit-app```
+Install dependencies: ```flutter pub get```
+Run the app: ```flutter run```
 * Back-end (Node.js)
 Clone this backend repository
 Move to the blazefit-backend directory: cd blazefit-backend
-Install dependencies: npm install
-Set up your database (e.g., MongoDB) and update the configuration in config.js.
+Install dependencies: ```npm install```
+Set up your API key and MindsDB and update the configuration in ENV.
 Start the server: ```node server.js```
 
 ## API Integrations
