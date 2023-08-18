@@ -26,15 +26,15 @@ Enjoy a smooth user experience while accessing various features of the app.
 ## Installation and Setup
 * Front-end (Flutter)
 Clone the frontend repository.
-Navigate to the blazefit-app directory: ```cd blazefit-app```
-Install dependencies: ```flutter pub get```
-Run the app: ```flutter run```
+  * Navigate to the blazefit-app directory: ```cd blazefit-app```
+  * Install dependencies: ```flutter pub get```
+  * Run the app: ```flutter run```
 * Back-end (Node.js)
 Clone this backend repository
 Move to the blazefit-backend directory: cd blazefit-backend
-Install dependencies: ```npm install```
-Set up your API key and MindsDB and update the configuration in ENV.
-Start the server: ```node server.js```
+  * Install dependencies: ```npm install```
+  * Set up your API key and MindsDB and update the configuration in ENV.
+  * Start the server: ```node server.js```
 
 ## API Integrations
 * OpenAI API
