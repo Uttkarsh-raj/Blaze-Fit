@@ -1,4 +1,5 @@
 import 'package:blaze_fit/constants/constants.dart';
+import 'package:blaze_fit/screens/Assess/assess.dart';
 import 'package:blaze_fit/screens/ChatPage/chat_page.dart';
 import 'package:blaze_fit/screens/HomeScreen/home_screen.dart';
 import 'package:blaze_fit/screens/MyProfile/profile.dart';
@@ -6,7 +7,7 @@ import 'package:flutter/material.dart';
 
 final screen = [
   const HomeScreen(),
-  const HomeScreen(),
+  const AssessPage(),
   const MyProfilePage(),
 ];
 
@@ -53,8 +54,8 @@ class _MainPageState extends State<MainPage> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search_outlined),
-            label: 'Search',
+            icon: Icon(Icons.assessment_outlined),
+            label: 'Analysis',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),

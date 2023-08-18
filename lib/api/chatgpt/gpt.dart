@@ -3,25 +3,6 @@ import 'dart:developer';
 import 'package:http/http.dart' as http;
 
 class ApiHandler {
-  static Future<List<dynamic>> getUserData() async {
-    try {
-      var uri = Uri.parse('https://hkmn-dev-new.onrender.com/api/v1/users');
-      var res = await http.get(uri);
-      var data = jsonDecode(res.body);
-      List temp = [];
-      if (res.statusCode != 200) {
-        throw data["message"];
-      }
-      for (var v in data) {
-        temp.add(v);
-      }
-      return temp;
-    } catch (e) {
-      log("An error occured $e.");
-      throw e.toString();
-    }
-  }
-
   static Future<String> getResponse(String? query) async {
     try {
       print('here');

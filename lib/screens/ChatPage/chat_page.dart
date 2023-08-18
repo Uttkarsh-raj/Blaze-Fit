@@ -2,6 +2,7 @@ import 'package:blaze_fit/api/chatgpt/gpt.dart';
 import 'package:blaze_fit/constants/constants.dart';
 import 'package:blaze_fit/utils/glassmorphidm.dart';
 import 'package:blaze_fit/utils/messages.dart';
+import 'package:blaze_fit/utils/utils.dart';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class _ChatPageState extends State<ChatPage> {
   TextEditingController messageController = TextEditingController();
   List<MessageWidget> _messages = [];
   final openAI = OpenAI.instance.build(
-    token: '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',
+    token: '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',
     baseOption: HttpSetup(
       receiveTimeout: const Duration(seconds: 60),
     ),
@@ -58,11 +59,12 @@ class _ChatPageState extends State<ChatPage> {
       final response = await openAI.onCompletion(request: request);
 
       ///cancel request
-      // openAI.cancelAIGenerate();
+      openAI.cancelAIGenerate();
       print(response?.choices[0].text);
       _receivedMessage(response?.choices[0].text ?? 'Regenerate Message');
     } catch (e) {
       print(e);
+      showSnackBar(context, e.toString());
       _receivedMessage(
           'It took too long...Please check your Internet Connection!!...');
     }
@@ -75,7 +77,7 @@ class _ChatPageState extends State<ChatPage> {
 
   @override
   void initState() {
-    openAI.setToken('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');
+    openAI.setToken('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');
     print(openAI.token);
     super.initState();
   }
@@ -182,9 +184,9 @@ class _ChatPageState extends State<ChatPage> {
                                 Row(
                                   children: const [
                                     CircleAvatar(
-                                      // backgroundImage: NetworkImage( //TODO: Add the app icon here...
-                                      //   widget.receiver.profilePic,
-                                      // ),
+                                      backgroundColor: Colors.transparent,
+                                      backgroundImage:
+                                          AssetImage('assets/images/logo.png'),
                                       radius: 25,
                                     ),
                                     SizedBox(

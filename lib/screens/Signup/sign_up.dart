@@ -1,9 +1,11 @@
 import 'package:blaze_fit/api/auth/firebase_auth.dart';
 import 'package:blaze_fit/constants/constants.dart';
 import 'package:blaze_fit/screens/AuthPage/main_auth.dart';
+import 'package:blaze_fit/screens/FormPage/form_page.dart';
 import 'package:blaze_fit/utils/utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -13,6 +15,17 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  getPermissions() async {
+    await Permission.activityRecognition.request();
+    await Permission.location.request();
+  }
+
+  @override
+  void initState() {
+    getPermissions();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -83,13 +96,13 @@ class _SignUpState extends State<SignUp> {
                           UserCredential userCredential =
                               await AuthServices().signInWithGoogle();
                           User user = userCredential.user!;
+                          print(user);
                           if (userCredential.additionalUserInfo!.isNewUser) {
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => MainAuthPage(),
+                                builder: (context) => const FormPage(),
                               ),
                             );
-                            //TODO: Register user in firebase and take to form page
                           }
                           Navigator.of(context).push(
                             MaterialPageRoute(

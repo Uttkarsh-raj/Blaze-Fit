@@ -1,4 +1,3 @@
-import 'package:blaze_fit/screens/HomeScreen/home_screen.dart';
 import 'package:blaze_fit/screens/NavbarPage/navbar_page.dart';
 import 'package:blaze_fit/screens/Signup/sign_up.dart';
 import 'package:firebase_auth/firebase_auth.dart';

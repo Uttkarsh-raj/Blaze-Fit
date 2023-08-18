@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:health/health.dart';
 import 'package:lottie/lottie.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 import '../../infra/health_repo.dart';
 
@@ -43,24 +44,30 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   getAll() async {
-    heartBeat = await repository.getAll();
-    setState(() {
-      stepCount = int.parse((heartBeat[2].value).toString().split('.')[0]);
-      heartRate = heartBeat[0].value.toString().split('.')[0];
-      caloriesBurned = heartBeat[1].value.toString().split('.')[0];
-      sleep = int.parse(heartBeat[3].value.toString().split('.')[0]);
+    heartBeat = await repository.getAll().then((value) {
+      setState(() {
+        stepCount = int.parse((value[2].value).toString().split('.')[0]);
+        heartRate = value[0].value.toString().split('.')[0];
+        caloriesBurned = value[1].value.toString().split('.')[0];
+        sleep = int.parse(value[3].value.toString().split('.')[0]);
+      });
+      return [];
     });
+
     print(heartRate);
     print(stepCount);
     print(caloriesBurned);
     print(sleep);
   }
 
+  getPermissions() async {
+    await Permission.activityRecognition.request();
+    await Permission.location.request();
+  }
+
   @override
   void initState() {
-    // controller.getData();//TODO: Call the required functions in the init state
     getAll();
-    // getHeartRate();
     super.initState();
   }
 
@@ -381,7 +388,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         const Text(
-                                          'Step Count :',
+                                          'Calories Burnt :',
                                           style: TextStyle(
                                             fontSize: 16,
                                             color: AppColors.white,

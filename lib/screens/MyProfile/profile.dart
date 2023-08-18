@@ -1,5 +1,6 @@
 import 'package:blaze_fit/api/auth/firebase_auth.dart';
 import 'package:blaze_fit/constants/constants.dart';
+import 'package:blaze_fit/screens/FormPage/form_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -258,7 +259,45 @@ class _MyProfilePageState extends State<MyProfilePage> {
                             ),
                           ],
                         ),
-                        SizedBox(height: size.height * 0.16),
+                        SizedBox(height: size.height * 0.1),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => FormPage(),
+                            ));
+                          },
+                          child: Container(
+                            width: size.width * 0.8,
+                            height: size.height * 0.072,
+                            decoration: BoxDecoration(
+                              color: AppColors.lime,
+                              borderRadius: BorderRadius.circular(100),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: const [
+                                Center(
+                                  child: Text(
+                                    ' Edit Profile',
+                                    maxLines: 2,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: 22,
+                                      color: AppColors.darkGreen,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 10),
+                                Icon(
+                                  Icons.edit,
+                                  color: AppColors.darkGreen,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 15),
                         GestureDetector(
                           onTap: () {
                             AuthServices().logOut();
